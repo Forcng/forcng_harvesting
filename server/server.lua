@@ -18,6 +18,7 @@ RegisterNetEvent("forcng:harvest", function(zoneId)
 
     local start = lastHarvest[src]
     if not start or start.zoneId ~= zoneId or (os.time() - start.t) > 20 then
+        -- If you do not want the player to get kicked from the server for exploiting removing the DropPlayer
         DropPlayer(src, "WARNING: Exploit detected.")
         return
     end
